@@ -1,12 +1,14 @@
 import React from 'react';
 
-const Loading = ({ text }) => {
+const Loading = (props) => {
     
-    console.log('props', text);
+    const { title, time } = props.data;
+    console.log('props', props);
 
     return (
         <div>
-            <h2>{text}</h2>
+            <h2>{title}</h2>
+            <small> Tiempo estimado { time } segundos</small>
         </div>
     );
 
