@@ -1,18 +1,28 @@
 import React from 'react';
-import './App.css';
-import Loading from './components/Loading';
+import ListUsers from './components/ListUsers';
+import ListUserV2 from './components/ListUsersV2';
 
 function App() {
 
-  const textObj = {
-    title: 'Terminando Ejecusion',
-    time: 57,  
-  };
+  const users = [
+    'Agustin Navarro',
+    'Carlos Perez',
+    'Raul Ruiz',
+    'Victoria Gil'
+  ];
+
+  const employees = [
+    { name: 'Agustin Navarro', years: 26 },
+    { name: 'Carlos Perez', years: 29 },
+    { name: 'Raul Ruiz', years: 25 },
+    { name: 'Victoria Gil', years: 18 },
+  ];
 
   return (
     <div className="App">
-      <h1>Mi App</h1> 
-      <Loading data={textObj} /> 
+      <h1>Mi App</h1>
+      {/*<ListUsers listUsers={users} />*/} 
+      <ListUserV2 users={employees} /> 
     </div>
   );
 }
