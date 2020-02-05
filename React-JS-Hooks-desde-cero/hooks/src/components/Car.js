@@ -1,9 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const Car = () => {
 
+
     const [started, setStarted] = useState(false);
     const [countKm, setCountKm] = useState(0); 
+
+    useEffect(() => {
+        document.title = `Coche ${started}`;
+    }, [started]);
+
+
 
     const checkStatedCar = () => started
         ? <span style={{color: 'green'}}>Encendido</span> 
