@@ -1,4 +1,4 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, Input } from '@angular/core';
 
 @Component({
   selector: 'app-grafico-barra-horizontal',
@@ -7,24 +7,27 @@ import { Component, OnDestroy } from '@angular/core';
 })
 export class GraficoBarraHorizontalComponent implements OnDestroy {
 
-  results: any[] = [
-    {
-      "name": "Juego 1",
-      "value": 20
-    },
-    {
-      "name": "Juego 2",
-      "value": 15
-    },
-    {
-      "name": "Juego 3",
-      "value": 25
-    },
-    {
-      "name": "Juego 4",
-      "value": 23
-    }
-  ];
+
+  @Input() results: any[] = [];
+
+  // results: any[] = [
+  //   {
+  //     "name": "Juego 1",
+  //     "value": 20
+  //   },
+  //   {
+  //     "name": "Juego 2",
+  //     "value": 15
+  //   },
+  //   {
+  //     "name": "Juego 3",
+  //     "value": 25
+  //   },
+  //   {
+  //     "name": "Juego 4",
+  //     "value": 23
+  //   }
+  // ];
 
   // options
   showXAxis = true;
@@ -38,28 +41,32 @@ export class GraficoBarraHorizontalComponent implements OnDestroy {
 
   colorScheme = 'nightLights';
 
-  intervalo;
+  //intervalo;
 
   constructor() {
-    this.intervalo = setInterval(() => {
-      console.log('hola');
+    /*
+      simulacion real time 
 
-      const newResults = [...this.results];
+        this.intervalo = setInterval(() => {
+          console.log('hola');
 
-      for (let i in newResults) {
-        newResults[i].value =  Math.round(Math.random() * 500);
-      }
+          const newResults = [...this.results];
 
-      this.results = [...newResults];
-    }, 1500);
+          for (let i in newResults) {
+            newResults[i].value =  Math.round(Math.random() * 500);
+          }
+
+          this.results = [...newResults];
+        }, 1500);
+    */
 
   }
 
   onSelect(event) {
-    console.log(event);
+    // console.log(event);
   }
 
   ngOnDestroy() {
-    clearInterval(this.intervalo);
+    // clearInterval(this.intervalo);
   }
 }
